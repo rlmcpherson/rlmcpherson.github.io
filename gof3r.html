@@ -1,0 +1,306 @@
+<!-- Creator     : groff version 1.19.2 -->
+<!-- CreationDate: Wed Nov 12 10:37:17 2014 -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="generator" content="groff -Thtml, see www.gnu.org">
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+<meta name="Content-Style" content="text/css">
+<style type="text/css">
+       p     { margin-top: 0; margin-bottom: 0; }
+       pre   { margin-top: 0; margin-bottom: 0; }
+       table { margin-top: 0; margin-bottom: 0; }
+</style>
+<title>gof3r</title>
+
+</head>
+<body>
+
+<h1 align=center>gof3r</h1>
+
+<a href="#NAME">NAME</a><br>
+<a href="#SYNOPSIS">SYNOPSIS</a><br>
+<a href="#DESCRIPTION">DESCRIPTION</a><br>
+<a href="#OPTIONS">OPTIONS</a><br>
+<a href="#COMMANDS">COMMANDS</a><br>
+
+<hr>
+
+
+<a name="NAME"></a>
+<h2>NAME</h2>
+
+
+<p style="margin-left:11%; margin-top: 1em">gof3r &minus;
+streaming, concurrent s3 client</p>
+
+<a name="SYNOPSIS"></a>
+<h2>SYNOPSIS</h2>
+
+
+<p style="margin-left:11%; margin-top: 1em"><b>gof3r</b>
+[OPTIONS]</p>
+
+<a name="DESCRIPTION"></a>
+<h2>DESCRIPTION</h2>
+
+
+<a name="OPTIONS"></a>
+<h2>OPTIONS</h2>
+
+
+<p style="margin-left:11%; margin-top: 1em"><b>-v,
+--version</b></p>
+
+<p style="margin-left:22%;">Print version</p>
+
+<p style="margin-left:11%;"><b>-m, --manpage</b></p>
+
+<p style="margin-left:22%;">Create gof3r.man man page in
+current directory</p>
+
+<p style="margin-left:11%;"><b>-i, --writeini</b></p>
+
+<p style="margin-left:22%;">Write .gof3r.ini in current
+user&rsquo;s home directory</p>
+
+<p style="margin-left:11%;"><b>-h, --help</b></p>
+
+<p style="margin-left:22%;">Show this help message</p>
+
+<a name="COMMANDS"></a>
+<h2>COMMANDS</h2>
+
+
+<p style="margin-left:11%; margin-top: 1em"><b>cp</b> <br>
+copy S3 objects</p>
+
+<p style="margin-left:11%; margin-top: 1em">copy S3 objects
+to or from S3 and local files</p>
+
+<p style="margin-left:11%; margin-top: 1em"><b>Usage</b>:
+gof3r [OPTIONS] cp [cp-OPTIONS]</p>
+
+
+<p style="margin-left:11%; margin-top: 1em"><b>Aliases</b>:
+copy <b><br>
+--no-ssl</b></p>
+
+<p style="margin-left:22%;">Do not use SSL for endpoint
+connection.</p>
+
+<p style="margin-left:11%;"><b>--no-md5</b></p>
+
+<p style="margin-left:22%;">Do not use md5 hash checking to
+ensure data integrity. By default, the md5 hash of is
+calculated concurrently during puts, stored at
+&lt;bucket&gt;.md5/&lt;key&gt;.md5, and verified on
+gets.</p>
+
+<p style="margin-left:11%;"><b>-c, --concurrency</b></p>
+
+<p style="margin-left:22%;">Concurrency of transfers</p>
+
+<p style="margin-left:11%;"><b>-s, --partsize</b></p>
+
+<p style="margin-left:22%;">Initial size of concurrent
+parts, in bytes</p>
+
+<p style="margin-left:11%;"><b>--endpoint</b></p>
+
+<p style="margin-left:22%;">Amazon S3 endpoint</p>
+
+<p style="margin-left:11%;"><b>--debug</b></p>
+
+<p style="margin-left:22%;">Enable debug logging.</p>
+
+<p style="margin-left:11%;"><b>-m, --header</b></p>
+
+<p style="margin-left:22%;">HTTP headers. May be used to
+set custom metadata, server-side encryption etc.</p>
+
+<table width="100%" border=0 rules="none" frame="void"
+       cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="7%">
+
+
+<p style="margin-top: 1em" valign="top"><b>--acl</b></p></td>
+<td width="4%"></td>
+<td width="50%">
+
+
+<p style="margin-top: 1em" valign="top">canned acl to apply
+to the object</p></td>
+<td width="28%">
+</td>
+</table>
+
+<p style="margin-left:11%;"><b>-h, --help</b></p>
+
+<p style="margin-left:22%;">Show this help message</p>
+
+<p style="margin-left:11%; margin-top: 1em"><b>get</b> <br>
+download from S3</p>
+
+<p style="margin-left:11%; margin-top: 1em">get (download)
+object from S3</p>
+
+<p style="margin-left:11%; margin-top: 1em"><b>Usage</b>:
+gof3r [OPTIONS] get [get-OPTIONS] <b><br>
+-k, --key</b></p>
+
+<p style="margin-left:22%;">S3 object key</p>
+
+<p style="margin-left:11%;"><b>-b, --bucket</b></p>
+
+<p style="margin-left:22%;">S3 bucket</p>
+
+<p style="margin-left:11%;"><b>-p, --path</b></p>
+
+<p style="margin-left:22%;">Path to file. Defaults to
+standard output for streaming.</p>
+
+<p style="margin-left:11%;"><b>--no-ssl</b></p>
+
+<p style="margin-left:22%;">Do not use SSL for endpoint
+connection.</p>
+
+<p style="margin-left:11%;"><b>--no-md5</b></p>
+
+<p style="margin-left:22%;">Do not use md5 hash checking to
+ensure data integrity. By default, the md5 hash of is
+calculated concurrently during puts, stored at
+&lt;bucket&gt;.md5/&lt;key&gt;.md5, and verified on
+gets.</p>
+
+<p style="margin-left:11%;"><b>-c, --concurrency</b></p>
+
+<p style="margin-left:22%;">Concurrency of transfers</p>
+
+<p style="margin-left:11%;"><b>-s, --partsize</b></p>
+
+<p style="margin-left:22%;">Initial size of concurrent
+parts, in bytes</p>
+
+<p style="margin-left:11%;"><b>--endpoint</b></p>
+
+<p style="margin-left:22%;">Amazon S3 endpoint</p>
+
+<p style="margin-left:11%;"><b>--debug</b></p>
+
+<p style="margin-left:22%;">Enable debug logging.</p>
+
+<p style="margin-left:11%;"><b>-v, --versionId</b></p>
+
+<p style="margin-left:22%;">Version ID of the object.
+Incompatible with md5 check (use --no-md5).</p>
+
+<p style="margin-left:11%;"><b>-h, --help</b></p>
+
+<p style="margin-left:22%;">Show this help message</p>
+
+<p style="margin-left:11%; margin-top: 1em"><b>put</b> <br>
+upload to S3</p>
+
+<p style="margin-left:11%; margin-top: 1em">put (upload)
+data to S3 object</p>
+
+<p style="margin-left:11%; margin-top: 1em"><b>Usage</b>:
+gof3r [OPTIONS] put [put-OPTIONS] <b><br>
+-k, --key</b></p>
+
+<p style="margin-left:22%;">S3 object key</p>
+
+<p style="margin-left:11%;"><b>-b, --bucket</b></p>
+
+<p style="margin-left:22%;">S3 bucket</p>
+
+<p style="margin-left:11%;"><b>-p, --path</b></p>
+
+<p style="margin-left:22%;">Path to file. Defaults to
+standard output for streaming.</p>
+
+<p style="margin-left:11%;"><b>--no-ssl</b></p>
+
+<p style="margin-left:22%;">Do not use SSL for endpoint
+connection.</p>
+
+<p style="margin-left:11%;"><b>--no-md5</b></p>
+
+<p style="margin-left:22%;">Do not use md5 hash checking to
+ensure data integrity. By default, the md5 hash of is
+calculated concurrently during puts, stored at
+&lt;bucket&gt;.md5/&lt;key&gt;.md5, and verified on
+gets.</p>
+
+<p style="margin-left:11%;"><b>-c, --concurrency</b></p>
+
+<p style="margin-left:22%;">Concurrency of transfers</p>
+
+<p style="margin-left:11%;"><b>-s, --partsize</b></p>
+
+<p style="margin-left:22%;">Initial size of concurrent
+parts, in bytes</p>
+
+<p style="margin-left:11%;"><b>--endpoint</b></p>
+
+<p style="margin-left:22%;">Amazon S3 endpoint</p>
+
+<p style="margin-left:11%;"><b>--debug</b></p>
+
+<p style="margin-left:22%;">Enable debug logging.</p>
+
+<p style="margin-left:11%;"><b>-m, --header</b></p>
+
+<p style="margin-left:22%;">HTTP headers. May be used to
+set custom metadata, server-side encryption etc.</p>
+
+<table width="100%" border=0 rules="none" frame="void"
+       cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="7%">
+
+
+<p style="margin-top: 1em" valign="top"><b>--acl</b></p></td>
+<td width="4%"></td>
+<td width="50%">
+
+
+<p style="margin-top: 1em" valign="top">canned acl to apply
+to the object</p></td>
+<td width="28%">
+</td>
+</table>
+
+<p style="margin-left:11%;"><b>-h, --help</b></p>
+
+<p style="margin-left:22%;">Show this help message</p>
+
+<p style="margin-left:11%; margin-top: 1em"><b>rm</b> <br>
+delete from S3</p>
+
+<p style="margin-left:11%; margin-top: 1em"><b>Usage</b>:
+gof3r [OPTIONS] rm &lt;path&gt; [rm-OPTIONS] <b><br>
+--endpoint</b></p>
+
+<p style="margin-left:22%;">Amazon S3 endpoint</p>
+
+<p style="margin-left:11%;"><b>--debug</b></p>
+
+<p style="margin-left:22%;">Enable debug logging.</p>
+
+<p style="margin-left:11%;"><b>-v, --versionId</b></p>
+
+<p style="margin-left:22%;">version ID of the object
+version to delete</p>
+
+<p style="margin-left:11%;"><b>-h, --help</b></p>
+
+<p style="margin-left:22%;">Show this help message</p>
+<hr>
+</body>
+</html>
