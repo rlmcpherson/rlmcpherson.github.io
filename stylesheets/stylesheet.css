@@ -256,6 +256,11 @@ form {
   padding: 20px;
 }
 
+sup { 
+        vertical-align: super;
+        font-size: smaller;
+}
+
 /*******************************************************************************
 Full-Width Styles
 *******************************************************************************/
@@ -367,6 +372,7 @@ Full-Width Styles
 #footer_wrap {
   background: #212121;
 }
+
 
 
 
